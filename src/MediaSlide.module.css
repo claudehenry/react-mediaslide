@@ -1,0 +1,487 @@
+
+section.mediaslide-portal {
+    scrollbar-width: thin;
+    scrollbar-color: blue orange;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  section.mediaslide-portal::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  section.mediaslide-portal::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+  }
+  
+  section.mediaslide-portal::-webkit-scrollbar-thumb {
+    background-color: rgba(125,125,125,0.5);
+    border-radius: 20px;
+    border: 3px solid rgba(255,255,255,0.5);
+    cursor:grab;
+  }
+.mediaslide-container { 
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    height: 100%;
+}
+.mediaslide { 
+    font-size: 1em;
+    overflow: hidden;
+    width:100%;
+}
+.mediaslide-leftbar { 
+    transition: left 0.4s, width 0.4s;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    position: absolute;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.mediaslide-leftbar::-webkit-scrollbar {
+    display: none;
+}
+.mediaslide-leftbar-opened { 
+    transition: left 0.4s, width 0.4s;
+}
+nav.mediaslide-nav { 
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    flex-direction: row;
+    justify-content: center;
+    transition: height 0.5s;
+}
+nav.mediaslide-nav > .mediaslide-nav-displaytype { 
+    display: inline;
+    position:relative;
+    top:-0.6em;
+    padding-top:0em;
+    padding-bottom: 0;
+    padding-left: 2.9em;
+    padding-right: 1.5em;
+    border-right: 1px solid rgba(0,0,0,0);
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+nav.mediaslide-nav > .mediaslide-nav-displaytype > input { 
+    position: relative;
+    left: -2em;
+}
+nav.mediaslide-nav > .mediaslide-nav-displaytype:hover {
+    background-color: rgba(255, 150, 0, 0.2);
+    transition: background-color 0s;
+}
+
+/*
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<path d="M94.6,55.6l31.9-31.9c2.3-2.3,2.3-6,0-8.2c-0.9-0.9-2.1-1.5-3.4-1.7L6.6,0C2.9-0.4-0.3,2.7,0.1,6.5L13.9,123
+		c0.6,4.8,6.5,6.8,9.9,3.4l31.8-31.8l97.2,97.1c2.3,2.3,6,2.3,8.2,0l30.8-30.8c2.3-2.3,2.3-6,0-8.2L94.6,55.6z M351,191.8
+		c2.3,2.3,6,2.3,8.2,0l97.2-97.1l31.8,31.8c2.3,2.3,6,2.3,8.2,0c0.9-0.9,1.5-2.1,1.7-3.4L511.9,6.6c0.4-3.7-2.7-6.9-6.5-6.5
+		L388.9,13.9c-4.8,0.6-6.8,6.5-3.4,9.9l31.9,31.9l-97.2,97.1c-2.3,2.3-2.3,5.9,0,8.2L351,191.8z M498.1,389
+		c-0.6-4.8-6.5-6.8-9.9-3.4l-31.8,31.8l-97.2-97.1c-2.3-2.3-5.9-2.3-8.2,0L320.2,351c-2.3,2.3-2.3,5.9,0,8.2l97.2,97.2l-31.9,31.9
+		c-2.3,2.3-2.3,6,0,8.2c0.9,0.9,2.1,1.5,3.4,1.7L505.4,512c3.7,0.4,6.9-2.7,6.5-6.5L498.1,389z M161,320.2c-2.3-2.3-5.9-2.3-8.2,0
+		l-97.2,97.1l-31.8-31.8c-2.3-2.3-6-2.3-8.2,0c-0.9,0.9-1.5,2.1-1.7,3.4L0.1,505.4c-0.4,3.7,2.7,6.9,6.5,6.5l116.5-13.7
+		c4.8-0.6,6.8-6.5,3.4-9.9l-31.9-31.9l97.2-97.1c2.3-2.3,2.3-6,0-8.2L161,320.2z"/>
+</g>
+</svg>
+
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 13.594 13.594" xml:space="preserve">
+<g>
+	<g>
+		<path style="fill:#030104;" d="M0.035,1.76c0.632,0.631,1.6,1.601,2.185,2.186c0.253,0.252,0.417,0.416,0.417,0.416
+			S1.963,5.039,1.682,5.318C1.403,5.596,1.903,5.583,1.903,5.583L5.65,5.937c0,0,0.304,0.025,0.304-0.268
+			c0-0.401-0.474-3.761-0.474-3.761s0-0.511-0.339-0.171c-0.34,0.342-0.884,0.884-0.884,0.884S4.11,2.473,3.884,2.246
+			C3.312,1.674,2.303,0.666,1.67,0.033C1.439,0.842,0.825,1.487,0.035,1.76z"/>
+		<path style="fill:#030104;" d="M7.896,11.58c0,0-0.001,0.512,0.339,0.172s0.885-0.883,0.885-0.883s0.146,0.146,0.372,0.373
+			c0.601,0.602,1.689,1.689,2.312,2.313c0.294-0.781,0.957-1.381,1.776-1.586c-0.598-0.6-1.758-1.76-2.423-2.426
+			c-0.253-0.252-0.418-0.416-0.418-0.416s0.677-0.678,0.955-0.955c0.28-0.279-0.221-0.266-0.221-0.266L7.727,7.551
+			c0,0-0.303-0.021-0.303,0.27C7.424,8.221,7.896,11.58,7.896,11.58z"/>
+		<path style="fill:#030104;" d="M1.716,13.561c0.614-0.613,1.721-1.721,2.363-2.363c0.251-0.252,0.416-0.416,0.416-0.416
+			s0.677,0.678,0.957,0.957c0.279,0.277,0.265-0.223,0.265-0.223L6.07,7.77c0,0,0.025-0.303-0.267-0.303
+			C5.4,7.467,2.04,7.94,2.04,7.94S1.529,7.938,1.87,8.28c0.341,0.338,0.883,0.881,0.883,0.881S2.606,9.309,2.378,9.536
+			C1.754,10.159,0.607,11.309,0,11.915C0.806,12.151,1.448,12.768,1.716,13.561z"/>
+		<path style="fill:#030104;" d="M13.594,1.685c-0.629,0.629-1.644,1.644-2.247,2.249c-0.252,0.251-0.417,0.414-0.417,0.414
+			s0.676,0.677,0.955,0.957c0.28,0.28-0.22,0.266-0.22,0.266L7.917,5.925c0,0-0.302,0.024-0.302-0.269
+			c0-0.402,0.472-3.761,0.472-3.761s-0.002-0.511,0.34-0.172C8.766,2.065,9.31,2.606,9.31,2.606S9.458,2.46,9.683,2.232
+			c0.551-0.55,1.508-1.509,2.146-2.144C12.117,0.871,12.776,1.472,13.594,1.685z"/>
+	</g>
+</g>
+</svg>
+*/
+
+.mediaslide-transport-fullscreen-active { 
+    background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="iso-8859-1"%3F><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools --><svg height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 13.594 13.594" xml:space="preserve"><g><g><path style="fill:%23030104;" d="M0.035,1.76c0.632,0.631,1.6,1.601,2.185,2.186c0.253,0.252,0.417,0.416,0.417,0.416S1.963,5.039,1.682,5.318C1.403,5.596,1.903,5.583,1.903,5.583L5.65,5.937c0,0,0.304,0.025,0.304-0.268c0-0.401-0.474-3.761-0.474-3.761s0-0.511-0.339-0.171c-0.34,0.342-0.884,0.884-0.884,0.884S4.11,2.473,3.884,2.246C3.312,1.674,2.303,0.666,1.67,0.033C1.439,0.842,0.825,1.487,0.035,1.76z"/><path style="fill:%23030104;" d="M7.896,11.58c0,0-0.001,0.512,0.339,0.172s0.885-0.883,0.885-0.883s0.146,0.146,0.372,0.373c0.601,0.602,1.689,1.689,2.312,2.313c0.294-0.781,0.957-1.381,1.776-1.586c-0.598-0.6-1.758-1.76-2.423-2.426c-0.253-0.252-0.418-0.416-0.418-0.416s0.677-0.678,0.955-0.955c0.28-0.279-0.221-0.266-0.221-0.266L7.727,7.551c0,0-0.303-0.021-0.303,0.27C7.424,8.221,7.896,11.58,7.896,11.58z"/><path style="fill:%23030104;" d="M1.716,13.561c0.614-0.613,1.721-1.721,2.363-2.363c0.251-0.252,0.416-0.416,0.416-0.416s0.677,0.678,0.957,0.957c0.279,0.277,0.265-0.223,0.265-0.223L6.07,7.77c0,0,0.025-0.303-0.267-0.303C5.4,7.467,2.04,7.94,2.04,7.94S1.529,7.938,1.87,8.28c0.341,0.338,0.883,0.881,0.883,0.881S2.606,9.309,2.378,9.536C1.754,10.159,0.607,11.309,0,11.915C0.806,12.151,1.448,12.768,1.716,13.561z"/><path style="fill:%23030104;" d="M13.594,1.685c-0.629,0.629-1.644,1.644-2.247,2.249c-0.252,0.251-0.417,0.414-0.417,0.414s0.676,0.677,0.955,0.957c0.28,0.28-0.22,0.266-0.22,0.266L7.917,5.925c0,0-0.302,0.024-0.302-0.269c0-0.402,0.472-3.761,0.472-3.761s-0.002-0.511,0.34-0.172C8.766,2.065,9.31,2.606,9.31,2.606S9.458,2.46,9.683,2.232c0.551-0.55,1.508-1.509,2.146-2.144C12.117,0.871,12.776,1.472,13.594,1.685z"/></g></g></svg>');
+}
+.mediaslide-transport-fullscreen { 
+    background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="utf-8"%3F><!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><path d="M94.6,55.6l31.9-31.9c2.3-2.3,2.3-6,0-8.2c-0.9-0.9-2.1-1.5-3.4-1.7L6.6,0C2.9-0.4-0.3,2.7,0.1,6.5L13.9,123c0.6,4.8,6.5,6.8,9.9,3.4l31.8-31.8l97.2,97.1c2.3,2.3,6,2.3,8.2,0l30.8-30.8c2.3-2.3,2.3-6,0-8.2L94.6,55.6z M351,191.8c2.3,2.3,6,2.3,8.2,0l97.2-97.1l31.8,31.8c2.3,2.3,6,2.3,8.2,0c0.9-0.9,1.5-2.1,1.7-3.4L511.9,6.6c0.4-3.7-2.7-6.9-6.5-6.5L388.9,13.9c-4.8,0.6-6.8,6.5-3.4,9.9l31.9,31.9l-97.2,97.1c-2.3,2.3-2.3,5.9,0,8.2L351,191.8z M498.1,389c-0.6-4.8-6.5-6.8-9.9-3.4l-31.8,31.8l-97.2-97.1c-2.3-2.3-5.9-2.3-8.2,0L320.2,351c-2.3,2.3-2.3,5.9,0,8.2l97.2,97.2l-31.9,31.9c-2.3,2.3-2.3,6,0,8.2c0.9,0.9,2.1,1.5,3.4,1.7L505.4,512c3.7,0.4,6.9-2.7,6.5-6.5L498.1,389z M161,320.2c-2.3-2.3-5.9-2.3-8.2,0l-97.2,97.1l-31.8-31.8c-2.3-2.3-6-2.3-8.2,0c-0.9,0.9-1.5,2.1-1.7,3.4L0.1,505.4c-0.4,3.7,2.7,6.9,6.5,6.5l116.5-13.7c4.8-0.6,6.8-6.5,3.4-9.9l-31.9-31.9l97.2-97.1c2.3-2.3,2.3-6,0-8.2L161,320.2z"/></g></svg>');
+}
+.mediaslide-transport-fullscreen,
+.mediaslide-transport-fullscreen-active,
+.mediaslide-transport-start,
+.mediaslide-transport-rewind,
+.mediaslide-transport-stop,
+.mediaslide-transport-play,
+.mediaslide-transport-forward,
+.mediaslide-transport-end,
+.mediaslide-transport-fullscreen { 
+    filter: invert(42%) saturate(1352%) hue-rotate(0deg) brightness(219%) contrast(119%);
+    background-repeat: no-repeat;
+    background-size: 1em;
+    cursor: pointer;
+    font-size: 0.9em;
+    background-color: transparent;
+    font-family: sans-serif;
+    border: 0;
+}
+
+/* 
+    Thumbnails view:
+*/
+ul.mediaslide-thumbnails-ul { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-inline-start: 0;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+.mediaslide-thumbnails-ul > li {
+    word-break: break-word;
+    display: inline;
+    list-style-type: none;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    padding-top:0.05em;
+    padding-bottom:0.3em;
+    padding-right:0.1em;
+    padding-left:0.1em;
+    cursor: pointer;
+    text-align: center; 
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0);
+    transition: background-color 1s, border-radius 0.5s;
+} 
+ul.mediaslide-thumbnails-ul > li > a { 
+    pointer-events: none;
+}
+.mediaslide-thumbnails-ul > li > img {
+    border-radius: 20px;
+    transition: border-radius 0.4s;
+}
+.mediaslide-thumbnails-ul > li:hover, 
+.mediaslide-thumbnails-ul > li > img:hover { 
+    border-radius: 0px;
+    background-color: rgba(255,255,255,0.2);
+    transition: background-color 0s;
+    box-shadow: 0px 0px 4px 0px rgba(255,255,255,0.2);    
+}
+.mediaslide-thumbnails > section.mediaslide-portal {  
+    overflow-y: auto;
+}
+
+/*
+
+    List view:
+
+*/
+ul.mediaslide-list-ul { 
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    column-gap: 50px;
+    flex-wrap: wrap;
+    padding-right:2em;
+    padding-left:2em;
+    max-height: 100%;
+    padding-bottom: 3em;
+    padding-inline-start: 0;
+    justify-content: center;
+
+}
+ul.mediaslide-list-ul > li { 
+    word-break: break-word;
+    display: inline;
+    list-style-type: none;
+    offset-position: 0px -160%;
+    margin-top:0em;
+    margin-bottom:0em;
+    margin-left:1em;
+    margin-right:1em;
+    cursor: pointer;
+    padding-left:1em;
+    padding-right:1em;
+    padding-top:0.05em;
+    padding-bottom:0.05em;
+    border-radius: 0px;
+    text-align:center;
+    background-color: rgba(255,255,255,0);
+    transition: background-color 0.3s, border-radius 0.5s;
+}
+ul.mediaslide-list-ul > li > a { 
+    pointer-events: none;
+}
+.mediaslide-list-ul > li > img {
+    border-radius: 0px;
+    position:relative;
+    top: 0.2em;
+    left:-0.5em;
+    transition: border-radius 0.5s;
+}
+ul.mediaslide-list-ul > li:hover,
+ul.mediaslide-list-ul > li > img:hover { 
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: 0px 0px 5px 1px rgba(255,255,255,0.2);
+    transition: background-color 0s;
+    border-radius: 15px;
+}
+.mediaslide-list > section.mediaslide-portal { 
+    overflow-x: auto;
+    overflow-y: clip;
+}
+
+/*
+`   Slide view:
+*/
+.mediaslide-slide-stage { 
+    transition: height 0.5s;
+    overflow-y: hidden;
+}
+.mediaslide-portal { 
+    transition: height 0.5s, width 0.5s, left 0.5s;
+    width: 100%;
+    position: absolute;
+}
+ul.mediaslide-slide-ul { 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-block-start: 0;
+    pointer-events: none;
+    padding-inline-start: 0;
+}
+.mediaslide-slide-ul > li {
+    word-break: break-word;
+    display: inline;
+    list-style-type: none;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    margin-top: 0.5em;
+    padding: 0.1em;
+    cursor: pointer;
+    text-align: center;
+    pointer-events: all;
+    border-radius: 7px;
+    background-color: rgba(255,255,255,0);
+    transition: background-color 1s, border-radius 0.5s;
+} 
+ul.mediaslide-slide-ul > li > a { 
+    pointer-events: none;
+}
+.mediaslide-slide-ul > li > img {
+    border-radius: 7px;
+    transition: border-radius 0.4s;
+}
+.mediaslide-slide-ul > li:hover,
+.mediaslide-slide-ul > li > img:hover { 
+    border-radius: 0px;
+    box-shadow: 0px 0px 7px 2px rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.2);
+    transition: background-color 0s;
+}
+.mediaslide-item-selected { 
+    outline: 1px solid rgba(255,255,255,0.4);
+}
+.mediaslide-slide > section.mediaslide-portal {  
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.mediaslide-double-buffer-container { 
+    width: 0;
+    margin: auto auto;
+}
+.mediaslide-double-buffer { 
+    position: absolute;
+    transform: translateX(-50%);
+    /*transition: opacity .4s ease-in-out, height 0.5s;*/
+    max-width: 100vw;
+    -webkit-transition: 1s -webkit-filter linear, opacity .4s ease-in-out, height 0.5s;
+-moz-transition: 1s -moz-filter linear, opacity .4s ease-in-out, height 0.5s;
+-moz-transition: 1s filter linear, opacity .4s ease-in-out, height 0.5s;
+-ms-transition: 1s -ms-filter linear, opacity .4s ease-in-out, height 0.5s;
+-o-transition: 1s -o-filter linear, opacity .4s ease-in-out, height 0.5s;
+transition: 1s filter linear, 1s -webkit-filter linear, opacity .4s ease-in-out, height 0.5s;
+}
+/*
+    Details view:
+
+*/
+ul.mediaslide-details-ul { 
+    display: block;
+}
+ul.mediaslide-details-ul > li { 
+    word-break: break-word;
+    display: block;
+    list-style-type: none;
+    margin: 1em;
+    cursor: pointer;
+    padding: 0.1em;
+    border-radius: 0px;
+    background-color: rgba(255,255,255,0);
+    transition: background-color 0.3s, border-radius 0.5s;
+}
+ul.mediaslide-details-ul > li > a { 
+    pointer-events: none;
+}
+ul.mediaslide-details-ul > li > img {
+    border-radius: 0px;
+    transition: border-radius 0.5s;
+}
+ul.mediaslide-details-ul > li:hover { 
+    border-radius: 7px;
+    transition: background-color 0s;
+    background-color: rgba(255,255,255,0.2)
+}
+.mediaslide-details > section.mediaslide-portal {  
+    overflow-y: auto;
+}
+
+/*
+/*
+rc-slider 
+*/
+.mediaslide-slider {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    position:relative;
+    top:-2em;
+  }
+  .mediaslide-size-slider-thumb {
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    background: rgba(255,255,255,0.5);
+    border: 5px solid #f79a1b;
+    border-radius: 100%;
+    display: block;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%), inset 1px 1px 2px 1px rgba(0,0,0,1);
+    clip-path: inset(50% 0 0 0)
+  }
+  .mediaslide-size-slider-thumb.active {
+    background-color: grey;
+  }
+  .mediaslide-size-slider-track {
+    position: relative;
+    background: #ddd;
+  }
+  .mediaslide-size-slider-track.mediaslide-size-slider-track-0 {
+    background: #ffa988;
+  }
+  .mediaslide-size-slider .mediaslide-size-slider-track {
+    top: 16px;
+    height: 4px;
+    border-radius:8px;
+  }
+  .mediaslide-size-slider .mediaslide-size-slider-thumb {
+    top: 2px;
+    width: 14px;
+    outline: none;
+    height: 26px;
+    line-height: 38px;
+  }
+  
+
+  .mediaslide-spacing-slider-thumb {
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    background: rgba(255,255,255,0.5);
+
+    border: 5px solid #f79a1b;
+    border-radius: 100%;
+    display: block;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%), inset 1px 1px 2px 1px rgba(0,0,0,1);
+    clip-path: inset(0 0 50% 0)
+  }
+  .mediaslide-spacing-slider-thumb.active {
+    background-color: grey;
+  }
+  .mediaslide-spacing-slider-track {
+    position: relative;
+    background: #ddd;
+  }
+  .mediaslide-spacing-slider-track.mediaslide-spacing-slider-track-0 {
+    background: #ffa988;
+  }
+  .mediaslide-spacing-slider .mediaslide-spacing-slider-track {
+    top: 16px;
+    height: 4px;
+    border-radius:8px;
+  }
+  .mediaslide-spacing-slider .mediaslide-spacing-slider-thumb {
+    top: 6px;
+    width: 10px;
+    outline: none;
+    height: 10px;
+    line-height: 38px;
+  }
+  .mediaslide-slider-opacity { 
+    transition: opacity .25s ease-in-out;
+  }
+  input.mediaslide-navbar-radio[type="radio"] {
+    /* ...existing styles */
+    display: grid;
+    position: relative;
+    top:20px;
+    left:-15px;
+
+    place-content: center;
+  }
+  
+  input.mediaslide-navbar-radio[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    outline-width:5px;
+    outline-color: white;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    
+  }
+  input.mediaslide-navbar-radio[type="radio"]::after { 
+    
+    border-radius:50%;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  input.mediaslide-navbar-radio[type="radio"]:checked::before {
+    transform: scale(1);
+    outline: max(2px, 0.15em) solid #f79a1b;
+    outline-offset: max(2px, 0.15em);
+    
+  }

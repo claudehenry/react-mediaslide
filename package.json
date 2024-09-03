@@ -1,0 +1,51 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.2",
+    "@eslint/js": "^9.9.1",
+    "eslint": "^8.57.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "globals": "^15.9.0",
+    "jslint": "^0.12.1",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-react": "^7.22.3",
+    "core-js": "^3.30.2",
+    "cross-env": "^7.0.3",
+    "prop-types": "^15.8.1",
+    "react-slider": "^2.0.6"
+  },
+  "name": "react-mediaslide",
+  "homepage": "https://kieransimkin.co.uk/mediaslide",
+  "author": "Kieran Simkin <382129+kieransimkin@users.noreply.github.com>",
+  "license": "BSD-3-Clause-Attribution",
+  "version": "1.0.51",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && cross-env NODE_ENV=production babel src --out-dir dist --copy-files",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint \"src/*.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kieransimkin/react-mediaslide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kieransimkin/react-mediaslide/issues"
+  },
+  "description": ""
+}
